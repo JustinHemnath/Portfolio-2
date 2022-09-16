@@ -1,7 +1,6 @@
 import { Button } from '@mui/material';
 import Projectslist from '../components/Projectslist';
 import { BsLinkedin } from 'react-icons/bs';
-import { GrMail } from 'react-icons/gr';
 
 const Homepage = () => {
     return (
@@ -23,7 +22,7 @@ const Homepage = () => {
                         Visit Main Portfolio
                     </Button>
                 </a>
-                <div className="absolute right-6 items-center h-full flex flex-col justify-around">
+                <div className="absolute right-4 top-10 items-center h-full flex flex-col justify-around">
                     <div className="text-4xl hover:text-bgclr cursor-pointer transition-color duration-300 ">
                         <a
                             href="https://www.linkedin.com/in/hemnath-balasubramanian-0a23a5185/"
@@ -31,9 +30,6 @@ const Homepage = () => {
                             <BsLinkedin />
                         </a>
                     </div>
-                    {/* <div className="text-4xl hover:text-bgclr cursor-pointer transition-color duration-300 ">
-                        <GrMail />
-                    </div> */}
                 </div>
             </div>
             <Projectslist />
