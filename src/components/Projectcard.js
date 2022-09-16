@@ -13,7 +13,8 @@ const Projectcard = ({ title, badges, location }) => {
   return (
     <Card
       className="bg-sectionclr w-[18em] pt-10 text-txtclr rounded-lg 
-      sm:w-[22em] sm:h-[16em] cursor-pointer active:scale-95"
+                    sm:w-[22em] sm:h-[16em] cursor-pointer hover:scale-105 
+                    active:scale-95 transition duration-300 ease-in-out"
       onClick={() => navigate(location)}>
       <p className="text-5xl text-center"> {title} </p>
 

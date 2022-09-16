@@ -6,7 +6,12 @@ import Signin from './Signin';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiCart } from 'react-icons/bi';
 
+import { useContext } from 'react';
+import { AmazonContext } from './../AmazonContext';
+
 const Navbar = () => {
+  const { state } = useContext(AmazonContext);
+
   return (
     <div className="h-16 bg-[#131921] flex items-center">
       <img src={Amazon} alt="amazon" height="100" width="100" />
@@ -42,7 +47,7 @@ const Navbar = () => {
 
           <div className="w-1 text-xl relative ml-auto">
             <h1 className="text-amber-500 text-2xl absolute -top-3 left-5">
-              0
+              {state.cartCount}
             </h1>
 
             <BiCart className="text-5xl absolute top-1" />
