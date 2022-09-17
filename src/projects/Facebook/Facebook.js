@@ -1,4 +1,4 @@
 const Facebook = () => {
-  return <div className="h-screen">Facebook</div>;
+	return <div className="h-screen">FACEBOOK</div>;
 };
 export default Facebook;

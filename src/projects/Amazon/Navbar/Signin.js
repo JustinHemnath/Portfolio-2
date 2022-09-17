@@ -1,104 +1,86 @@
-import {
-  Button,
-  Menu,
-  MenuHandler,
-  MenuList,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-} from '@material-tailwind/react';
+import { Button, Modal } from 'react-daisyui';
 import { BsFillCaretDownFill } from 'react-icons/bs';
 import { useState } from 'react';
 
 const Signin = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [modal, setModal] = useState(false);
-  const [user, setUser] = useState(null);
-  const [name, setName] = useState(null);
+	const [dropdown, setdropdown] = useState(false);
+	const [modal, setModal] = useState(false);
+	const [user, setUser] = useState(null);
+	const [name, setName] = useState(null);
 
-  const handleSubmit = () => {
-    setModal(false);
-    setUser(name);
-  };
+	const handleSubmit = () => {
+		setModal(false);
+		setUser(name);
+	};
 
-  return (
-    <div
-      className="cursor-pointer"
-      onMouseEnter={() => setMenuOpen(true)}
-      onMouseLeave={() => setMenuOpen(false)}>
-      <Menu open={menuOpen ? true : false}>
-        <MenuHandler>
-          <div>
-            <p>Hello, {user !== null ? user : 'sign in'}</p>
-            <p className="font-black flex items-center">
-              Account & Lists
-              <BsFillCaretDownFill />
-            </p>
-          </div>
-        </MenuHandler>
+	return (
+		<div
+			className="relative"
+			onMouseEnter={() => setdropdown(true)}
+			onMouseLeave={() => setdropdown(false)}>
+			<p>Hello, {user !== null ? user : 'sign in'}</p>
+			<p className="font-black flex items-center">
+				Account & Lists
+				<BsFillCaretDownFill />
+			</p>
 
-        <MenuList>
-          <Button
-            color="amber"
-            className="outline-none ml-6"
-            onClick={() => setModal(true)}>
-            Sign In
-          </Button>
-        </MenuList>
-      </Menu>
+			{dropdown && (
+				<div className=" absolute top-50 p-4 rounded-lg shadow-md bg-white">
+					<Button
+						className="bg-amber-400 border-0 text-black
+           hover:bg-amber-400"
+						onClick={() => setModal(true)}>
+						Sign In
+					</Button>
+				</div>
+			)}
 
-      {/* Modal */}
-      <Dialog
-        open={modal}
-        size="md"
-        className="py-10 h-[30em] flex flex-col items-center gap-y-10">
-        <DialogHeader>
-          <h1>Sign In</h1>
-        </DialogHeader>
-        <DialogBody className="flex flex-col gap-16 w-3/4">
-          <label htmlFor="name" className="flex justify-between">
-            <span>Enter your Name</span>
+			<Modal
+				open={modal}
+				className="py-10 h-[30em] max-w-xl text-black bg-white flex flex-col items-center gap-y-10">
+				<Modal.Header>
+					<h1 className="text-2xl font-bold text-center">Sign In</h1>
+				</Modal.Header>
+				<Modal.Body className="flex flex-col gap-16 w-3/4">
+					<label className="flex justify-between">
+						<span>Enter your Name</span>
 
-            <input
-              type="text"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
-              className="border border-gray-900 rounded-sm w-60"
-            />
-          </label>
+						<input
+							type="text"
+							onChange={(e) => setName(e.target.value)}
+							className="border border-gray-900 rounded-sm w-60"
+						/>
+					</label>
 
-          <label htmlFor="password" className="flex justify-between">
-            <span>Enter your Password</span>
+					<label className="flex justify-between">
+						<span>Enter your Password</span>
 
-            <input
-              type="password"
-              id="password"
-              value="password"
-              className="border border-gray-900 rounded-sm w-60"
-              disabled
-            />
-          </label>
-        </DialogBody>
+						<input
+							type="password"
+							className="border border-gray-900 rounded-sm w-60"
+							disabled
+						/>
+					</label>
+				</Modal.Body>
 
-        <DialogFooter>
-          <Button
-            color="amber"
-            className="outline-none ml-6"
-            onClick={handleSubmit}>
-            Sign In
-          </Button>
+				<Modal.Actions>
+					<Button
+						className="bg-amber-400 border-0 text-black
+           						hover:bg-amber-400"
+						onClick={handleSubmit}>
+						Sign In
+					</Button>
 
-          <Button
-            color="amber"
-            className="outline-none ml-6"
-            onClick={() => setModal(false)}>
-            Close
-          </Button>
-        </DialogFooter>
-      </Dialog>
-    </div>
-  );
+					<Button
+						className="bg-amber-400 border-0 text-black
+            						hover:bg-amber-400"
+						onClick={() => setModal(false)}>
+						Close
+					</Button>
+				</Modal.Actions>
+			</Modal>
+		</div>
+	);
 };
 
 export default Signin;
