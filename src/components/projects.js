@@ -12,6 +12,13 @@ const projects = [
 		location: '/facebook',
 		badges: [],
 	},
+
+	{
+		id: 3,
+		title: 'Chat App',
+		location: '/chatapp',
+		badges: ['Firebase'],
+	},
 ];
 
 export default projects;
