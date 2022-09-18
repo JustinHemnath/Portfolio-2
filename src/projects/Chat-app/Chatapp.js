@@ -16,17 +16,15 @@ const Chatapp = () => {
 	const [user] = useAuthState(auth);
 
 	useEffect(() => {
-		if (user) {
-			const name = user.displayName.split(' ');
+		const name = user.displayName.split(' ');
 
-			const arr = [];
+		const arr = [];
 
-			name.forEach((item) => {
-				arr.push(item.at(0));
-			});
+		name.forEach((item) => {
+			arr.push(item.at(0));
+		});
 
-			setLetters(arr.join(''));
-		}
+		setLetters(arr.join(''));
 	}, [user]);
 
 	return (
