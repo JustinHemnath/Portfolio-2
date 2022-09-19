@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import GoogleButton from 'react-google-button';
 import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
-import Profile from './Profile';
 
-const Chatapp = () => {
-	const [letters, setLetters] = useState('G');
+import Profile from './Profile';
+import GoogleButton from 'react-google-button';
+
+const Navbar = ({ loggedInUser, setLoggedInUser }) => {
+	const [letters, setLetters] = useState('');
 
 	const googleSignIn = () => {
 		const provider = new GoogleAuthProvider();
@@ -17,26 +18,26 @@ const Chatapp = () => {
 
 	useEffect(() => {
 		if (user) {
-			const name = user.displayName.split(' ');
-
 			const arr = [];
+			const name = user.displayName.split(' ');
 
 			name.forEach((item) => {
 				arr.push(item.at(0));
 			});
 
 			setLetters(arr.join(''));
+
+			setLoggedInUser(user);
 		}
 	}, [user]);
 
 	return (
-		<div className="h-screen">
-			<nav className="flex justify-end m-4">
+		<nav className="flex justify-end m-4">
+			{!loggedInUser.auth?.currentUser ? (
 				<GoogleButton onClick={googleSignIn} />
-				<Profile letters={letters} />
-			</nav>
-			<h1 className="text-center text-3xl">Work in Progress</h1>
-		</div>
+			) : null}
+			<Profile letters={letters} />
+		</nav>
 	);
 };
-export default Chatapp;
+export default Navbar;

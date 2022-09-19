@@ -16,7 +16,7 @@ const Projectcard = ({ title, badges, location }) => {
                     sm:w-[22em] sm:h-[16em] cursor-pointer hover:scale-105 
                     active:scale-95 transition duration-300 ease-in-out"
 			onClick={() => navigate(location)}>
-			<p className="text-5xl text-center"> {title} </p>
+			<p className="text-4xl text-center"> {title} </p>
 
 			<div className="items-center mt-4 sm:mt-auto">
 				<div className="flex justify-center flex-wrap gap-1">

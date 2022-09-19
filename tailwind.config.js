@@ -13,6 +13,7 @@ module.exports = {
 				sectionclr: '#30465c',
 				ashen: '#EAECEC',
 				cardwhite: '#FEFFFE',
+				purplebg: '#5803EC',
 			},
 		},
 	},

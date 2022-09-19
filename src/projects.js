@@ -6,10 +6,17 @@ const projects = [
 		badges: ['Context API', 'TailwindCSS'],
 	},
 
+	// {
+	// 	id: 2,
+	// 	title: 'Facebook',
+	// 	location: '/facebook',
+	// 	badges: ['Firebase'],
+	// },
+
 	{
 		id: 2,
-		title: 'Chat App',
-		location: '/chatapp',
+		title: 'Whatsapp',
+		location: '/whatsapp',
 		badges: ['Firebase'],
 	},
 ];

@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //PAGES
 import Homepage from './pages/Homepage';
 import Amazon from './projects/Amazon/Amazon';
-import Chatapp from './projects/Chat-app/Chatapp';
+import Whatsapp from './projects/Whatsapp/Whatsapp';
+import Ecommerce from './projects/Ecommerce/Ecommerce';
 import Facebook from './projects/Facebook/Facebook';
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
 				</Route>
 				<Route path="/amazon" element={<Amazon />} />
 				<Route path="/facebook" element={<Facebook />} />
-				<Route path="/chatapp" element={<Chatapp />} />
+				<Route path="/whatsapp" element={<Whatsapp />} />
+				<Route path="/ecommerce" element={<Ecommerce />} />
 			</Routes>
 		</BrowserRouter>
 	);
