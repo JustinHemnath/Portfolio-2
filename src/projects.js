@@ -8,13 +8,6 @@ const projects = [
 
 	{
 		id: 2,
-		title: 'Facebook',
-		location: '/facebook',
-		badges: [],
-	},
-
-	{
-		id: 3,
 		title: 'Chat App',
 		location: '/chatapp',
 		badges: ['Firebase'],

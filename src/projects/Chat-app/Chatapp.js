@@ -16,23 +16,26 @@ const Chatapp = () => {
 	const [user] = useAuthState(auth);
 
 	useEffect(() => {
-		const name = user.displayName.split(' ');
+		if (user) {
+			const name = user.displayName.split(' ');
 
-		const arr = [];
+			const arr = [];
 
-		name.forEach((item) => {
-			arr.push(item.at(0));
-		});
+			name.forEach((item) => {
+				arr.push(item.at(0));
+			});
 
-		setLetters(arr.join(''));
+			setLetters(arr.join(''));
+		}
 	}, [user]);
 
 	return (
-		<div>
-			<nav className="h-screen flex justify-end m-4">
+		<div className="h-screen">
+			<nav className="flex justify-end m-4">
 				<GoogleButton onClick={googleSignIn} />
 				<Profile letters={letters} />
 			</nav>
+			<h1 className="text-center text-3xl">Work in Progress</h1>
 		</div>
 	);
 };

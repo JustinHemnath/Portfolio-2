@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Projectcard from './Projectcard';
-import Data from './projects.js';
+import Data from '../projects';
 
 const Projectslist = () => {
 	const [listVisible, setListVisible] = useState(false);
