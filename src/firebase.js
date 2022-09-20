@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_KEY,
-	authDomain: 'chat-app-11fb6.firebaseapp.com',
+	authDomain: 'hemnath-portfolio2.netlify.app',
 	projectId: 'chat-app-11fb6',
 	storageBucket: 'chat-app-11fb6.appspot.com',
 	messagingSenderId: '633534067312',
