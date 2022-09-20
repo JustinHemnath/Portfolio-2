@@ -2,12 +2,12 @@ import { auth } from '../../firebase';
 import { motion } from 'framer-motion';
 
 const style = {
-	sent: `w-3/4 m-3 p-3 sm:p-4 break-words bg-[#E3FFC8] 
+	sent: `w-3/4 m-3 p-3 sm:p-4 break-words bg-purplebg text-white
 			rounded-xl shadow-md ml-auto text-end`,
-	received: `w-3/4 m-3 p-4 sm:p-4 break-words bg-white rounded-xl 
+	received: `w-3/4 m-3 p-4 sm:p-4 break-words bg-white text-black rounded-xl 
 				shadow-md mr-auto text-start`,
-	name: `text-whatsappbg font-black text-lg`,
-
+	nameSent: `font-black text-lg underline text-white`,
+	nameReceived: `font-black text-lg underline text-black`,
 	message: `text-xl mt-2 leading-6`,
 };
 
@@ -21,7 +21,14 @@ const Message = ({ messages }) => {
 			className={
 				messages.uid === currentUser.uid ? style.sent : style.received
 			}>
-			<h1 className={style.name}>{messages.name}</h1>
+			<h1
+				className={
+					messages.uid === currentUser.uid
+						? style.nameSent
+						: style.nameReceived
+				}>
+				{messages.name}
+			</h1>
 			<p className={style.message}>{messages.message}</p>
 		</motion.div>
 	);

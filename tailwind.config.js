@@ -14,6 +14,7 @@ module.exports = {
 				ashen: '#EAECEC',
 				cardwhite: '#FEFFFE',
 				whatsappbg: '#075E55',
+				purplebg: '#4C0F82',
 				whatsappsent: '#E3FFC8',
 			},
 		},

@@ -38,7 +38,7 @@ export const MenuItem = styled.div`
 export const Avatar = styled.button`
 	width: 3em;
 	border-radius: 50%;
-	background-color: #075e55;
+	background-color: #4c0f82;
 	color: white;
 	padding: 0.8em 0;
 	font-size: 1.1rem;

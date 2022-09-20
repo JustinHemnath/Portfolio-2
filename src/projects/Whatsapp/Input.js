@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { doc, addDoc, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { auth } from '../../firebase';
 
 const style = {
 	inputbox: `basis-[5%] w-full px-1 pb-1 flex gap-1`,
 	input: `basis-3/4 h-12 rounded-bl-xl p-3 outline-0`,
-	button: `basis-1/4 bg-whatsappbg text-white rounded-br-xl`,
+	button: `basis-1/4 bg-purplebg text-white rounded-br-xl`,
 };
 
 const Input = () => {
