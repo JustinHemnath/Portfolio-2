@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Avatar } from '../../styled';
 import { Dropdown, MenuItem } from '../../styled';
 import { auth } from '../../firebase';

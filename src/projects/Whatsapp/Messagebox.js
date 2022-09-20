@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Message from './Message';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
@@ -6,6 +6,8 @@ import { memo } from 'react';
 
 const Messagebox = memo(() => {
 	const [messages, setMessages] = useState([]);
+
+	const spanRef = useRef();
 
 	useEffect(() => {
 		const unsub = onSnapshot(
@@ -16,9 +18,11 @@ const Messagebox = memo(() => {
 					{ ...doc.data(), id: new Date().getTime().toString() },
 				]);
 
-				console.log(doc.data());
+				// console.log(doc.data());
 			}
 		);
+
+		// spanRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
 		return () => unsub();
 	}, []);
@@ -28,6 +32,7 @@ const Messagebox = memo(() => {
 			{messages.map((item) => (
 				<Message key={item.id} messages={item} />
 			))}
+			<span ref={spanRef}></span>
 		</div>
 	);
 });
