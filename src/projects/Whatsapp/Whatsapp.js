@@ -6,10 +6,6 @@ import { useState } from 'react';
 const Whatsapp = () => {
 	const [loggedInUser, setLoggedInUser] = useState({});
 
-	useEffect(() => {
-		console.log(loggedInUser);
-	}, [loggedInUser]);
-
 	return (
 		<div className="h-[60em] p-1 bg-bgclr">
 			<Navbar {...{ loggedInUser, setLoggedInUser }} />

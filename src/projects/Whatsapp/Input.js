@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { doc, setDoc, serverTimestamp, onSnapshot } from 'firebase/firestore';
+import { doc, addDoc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { auth } from '../../firebase';
 
@@ -15,21 +15,18 @@ const Input = () => {
 	const sendMessage = async (e) => {
 		e.preventDefault();
 
-		const data = doc(db, 'conversation', 'messages');
+		const { displayName, uid } = auth.currentUser;
 
-		await setDoc(
-			data,
-			{
-				[auth.currentUser.displayName]: {
-					[auth.currentUser.displayName]: text,
-					time: serverTimestamp(),
-				},
-			},
-			{ merge: true }
-		);
+		const data = doc(db, 'conversations', 'messages');
+
+		await setDoc(data, {
+			id: new Date().getTime().toString(),
+			uid,
+			name: displayName,
+			message: text,
+		});
 
 		setText('');
-		console.log(auth);
 	};
 
 	return (
@@ -40,6 +37,7 @@ const Input = () => {
 				className={style.input}
 				onChange={(e) => setText(e.target.value)}
 				placeholder="Type a message..."
+				autoFocus
 			/>
 			<button className={style.button}>Send</button>
 		</form>

@@ -5,11 +5,14 @@ const style = {
 	received: `mr-auto`,
 };
 
-const Message = () => {
+const Message = ({ messages }) => {
+	if (messages.length === 0) {
+		return null;
+	}
 	return (
 		<div className="w-3/4 m-3 p-4 bg-white rounded-xl shadow-md">
-			<h1 className={style.name}>HEMNATH BALASUBRAMANIAN</h1>
-			<p className={style.message}>MESSAGE</p>
+			<h1 className={style.name}>{messages.name}</h1>
+			<p className={style.message}>{messages.message}</p>
 		</div>
 	);
 };
