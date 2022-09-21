@@ -6,7 +6,7 @@ const style = {
 	header: `basis-[5%] sm:basis-[10%] bg-whatsappbg sm:rounded-t-lg text-center text-white 
               text-lg sm:text-2xl sm:text-xl p-3`,
 
-	box: `h-[35em] w-full sm:h-[40em] sm:w-[50em] rounded-xl 
+	box: `h-[40em] w-full sm:w-[50em] rounded-xl 
     bg-ashen flex flex-col`,
 };
 
