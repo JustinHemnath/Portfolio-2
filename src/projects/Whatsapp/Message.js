@@ -6,8 +6,8 @@ const style = {
 			rounded-xl shadow-md ml-auto text-end`,
 	received: `max-w-max m-3 px-3 sm:pr-8 break-words bg-white text-black rounded-xl 
 				shadow-md mr-auto text-start`,
-	name: `font-black text-lg text-whatsappbg pt-1 pb-2`,
-	message: `text-xl mt-1 leading-6 pb-2`,
+	name: `font-black text-md text-whatsappbg pt-2 pb-2`,
+	message: `text-md mt-1 leading-6 pb-3`,
 };
 
 const Message = ({ messages }) => {

@@ -14,9 +14,9 @@ const Homepage = () => {
 				</h1>
 
 				<div
-					className="px-4 py-2 mx-4 sm:text-lg rounded-lg
+					className="px-4 py-2 mx-4 text-xs sm:text-lg rounded-lg
 								 text-txtclr text-center">
-					Visit main portfolio for more projects and details :
+					Visit main portfolio for more projects and details:
 					<u className="ml-2 sm:ml-4 font-black">
 						www.hemnath-portfolio.netlify.app
 					</u>
