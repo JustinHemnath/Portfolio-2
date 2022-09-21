@@ -23,7 +23,7 @@ const Profile = ({ letters }) => {
 				{letters ? (
 					<Avatar>{letters}</Avatar>
 				) : (
-					<img src={logo} width="50" />
+					<img src={logo} width="50" alt="whatsapp" />
 				)}
 			</div>
 			{dropdown && (

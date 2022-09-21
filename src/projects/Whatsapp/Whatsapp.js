@@ -1,6 +1,5 @@
 import Navbar from './Navbar';
 import Chatbox from './Chatbox';
-import { useEffect } from 'react';
 import { useState } from 'react';
 
 const Whatsapp = () => {

@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { doc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { auth } from '../../firebase';
 
 const style = {
 	inputbox: `basis-[5%] w-full px-1 pb-1 flex gap-1`,
 	input: `basis-3/4 h-12 rounded-bl-xl p-3 outline-0`,
-	button: `basis-1/4 bg-purplebg text-white rounded-br-xl`,
+	button: `basis-1/4 bg-whatsappbg text-white rounded-br-xl`,
 };
 
 const Input = () => {
@@ -17,13 +17,14 @@ const Input = () => {
 
 		const { displayName, uid } = auth.currentUser;
 
-		const data = doc(db, 'conversations', 'messages');
+		const data = collection(db, 'conversations');
 
-		await setDoc(data, {
+		await addDoc(data, {
 			id: new Date().getTime().toString(),
 			uid,
 			name: displayName,
 			message: text,
+			timestamp: serverTimestamp(),
 		});
 
 		setText('');

@@ -46,6 +46,9 @@ const AmazonContextProvider = ({ children }) => {
 					cartCount: state.cartCount - 1,
 					totalPrice: state.totalPrice - action.payload,
 				};
+
+			default:
+				return state;
 		}
 	};
 

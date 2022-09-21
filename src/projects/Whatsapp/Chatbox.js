@@ -3,7 +3,7 @@ import Messagebox from './Messagebox';
 import logo from './whatsapp.png';
 
 const style = {
-	header: `basis-[5%] sm:basis-[10%] bg-purplebg sm:rounded-t-lg text-center text-white 
+	header: `basis-[5%] sm:basis-[10%] bg-whatsappbg sm:rounded-t-lg text-center text-white 
               text-lg sm:text-2xl sm:text-xl p-3`,
 
 	box: `h-[45em] w-full sm:h-[40em] sm:w-[50em] rounded-xl 

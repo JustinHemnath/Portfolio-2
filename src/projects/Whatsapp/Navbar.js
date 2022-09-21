@@ -29,7 +29,7 @@ const Navbar = ({ loggedInUser, setLoggedInUser }) => {
 
 			setLoggedInUser(user);
 		}
-	}, [user]);
+	}, [user, setLoggedInUser]);
 
 	return (
 		<nav className="flex justify-end m-4">
