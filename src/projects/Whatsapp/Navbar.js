@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 import Profile from './Profile';
 import GoogleButton from 'react-google-button';
+import { MdOutlineArrowBack } from 'react-icons/md';
 
 const Navbar = ({ loggedInUser, setLoggedInUser }) => {
 	const [letters, setLetters] = useState('');
@@ -32,11 +34,16 @@ const Navbar = ({ loggedInUser, setLoggedInUser }) => {
 	}, [user, setLoggedInUser]);
 
 	return (
-		<nav className="flex justify-end m-4">
-			{!loggedInUser.auth?.currentUser ? (
-				<GoogleButton onClick={googleSignIn} />
-			) : null}
-			<Profile letters={letters} />
+		<nav className="flex justify-between m-4">
+			<Link to="/">
+				<MdOutlineArrowBack className="text-6xl text-whatsappbg" />
+			</Link>
+			<div className="flex justify-end">
+				{!loggedInUser.auth?.currentUser ? (
+					<GoogleButton onClick={googleSignIn} />
+				) : null}
+				<Profile letters={letters} />
+			</div>
 		</nav>
 	);
 };
