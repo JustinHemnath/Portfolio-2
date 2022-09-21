@@ -1,12 +1,22 @@
 import Navbar from './Navbar';
 import Chatbox from './Chatbox';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Whatsapp = () => {
 	const [loggedInUser, setLoggedInUser] = useState({});
 
+	const mainRef = useRef();
+
+	useEffect(() => {
+		mainRef.current.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+			inline: 'nearest',
+		});
+	});
+
 	return (
-		<div className="h-[60em] p-1 bg-bgclr">
+		<div ref={mainRef} className="h-[60em] p-1 bg-bgclr">
 			<Navbar {...{ loggedInUser, setLoggedInUser }} />
 			<div className="flex justify-center items-center">
 				{loggedInUser.auth?.currentUser ? (

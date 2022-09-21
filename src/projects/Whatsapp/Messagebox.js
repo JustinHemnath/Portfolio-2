@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
-import Message from './Message';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../../firebase';
+import Message from './Message';
 
 const Messagebox = () => {
 	const [messages, setMessages] = useState([]);

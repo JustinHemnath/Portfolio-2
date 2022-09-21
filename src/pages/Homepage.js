@@ -3,7 +3,7 @@ import { BsLinkedin } from 'react-icons/bs';
 
 const Homepage = () => {
 	return (
-		<div className="max-h-max bg-bgclr pb-40 text-txtclr">
+		<div className="max-h-max bg-bgclr pb-10 sm:pb-40 text-txtclr">
 			<div
 				className="py-3 bg-purple-900 relative flex flex-col 
 							items-center justify-center gap-6">
