@@ -36,11 +36,9 @@ const Navbar = ({ loggedInUser, setLoggedInUser }) => {
 
 	return (
 		<nav className="flex justify-between m-4">
-			<motion.div
-				whileTap={{ scale: [0.5, 1] }}
-				whileHover={{ scale: 1.2 }}>
+			<motion.div whileHover={{ scale: 1.2 }}>
 				<Link to="/">
-					<MdOutlineArrowBack className="text-6xl text-white" />
+					<MdOutlineArrowBack className="text-4xl mt-2 text-white active:text-whatsappbg" />
 				</Link>
 			</motion.div>
 			<div className="flex justify-end">
