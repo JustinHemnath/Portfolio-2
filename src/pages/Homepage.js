@@ -23,7 +23,7 @@ const Homepage = () => {
 				</div>
 
 				<div
-					className="absolute right-4 -top-12 sm:top-10 items-center
+					className="absolute right-4 -top-9 sm:top-10 items-center
 							 	h-full flex flex-col justify-around">
 					<div
 						className="text-4xl hover:text-bgclr cursor-pointer 
