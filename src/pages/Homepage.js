@@ -5,7 +5,7 @@ const Homepage = () => {
 	return (
 		<div className="max-h-max bg-bgclr pb-40 text-txtclr">
 			<div
-				className="h-40 bg-purple-900 relative flex flex-col 
+				className="py-3 bg-purple-900 relative flex flex-col 
 							items-center justify-center gap-6">
 				<h1
 					className="text-3xl sm:text-5xl font-black 

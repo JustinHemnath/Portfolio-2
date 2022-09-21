@@ -24,7 +24,7 @@ const Projectslist = () => {
 			<h1 className="text-center text-5xl mt-12 sm:mt-16">Projects</h1>
 			<div className="mt-2  mb-6 bg-purple-500 w-28 h-1 mx-auto"></div>
 			<div
-				className="w-[20em] mx-auto gap-4 mb-16 border-2 border-purple-300
+				className="w-[15em] sm:w-[30em] mx-auto gap-4 mb-16 border-2 border-purple-300
 							bg-transparent text-purple-300 py-2 px-6 rounded-lg">
 				<h1 className="text-center">More projects on the way...</h1>
 			</div>
