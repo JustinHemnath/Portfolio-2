@@ -3,6 +3,7 @@ import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import Profile from './Profile';
 import GoogleButton from 'react-google-button';
@@ -35,9 +36,13 @@ const Navbar = ({ loggedInUser, setLoggedInUser }) => {
 
 	return (
 		<nav className="flex justify-between m-4">
-			<Link to="/">
-				<MdOutlineArrowBack className="text-6xl text-whatsappbg" />
-			</Link>
+			<motion.div
+				whileTap={{ scale: [0.5, 1] }}
+				whileHover={{ scale: 1.2 }}>
+				<Link to="/">
+					<MdOutlineArrowBack className="text-6xl text-white" />
+				</Link>
+			</motion.div>
 			<div className="flex justify-end">
 				{!loggedInUser.auth?.currentUser ? (
 					<GoogleButton onClick={googleSignIn} />
