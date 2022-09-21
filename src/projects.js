@@ -17,7 +17,7 @@ const projects = [
 		id: 2,
 		title: 'Whatsapp',
 		location: '/whatsapp',
-		badges: ['Firebase'],
+		badges: ['Firebase Auth', 'Firestore'],
 	},
 ];
 
