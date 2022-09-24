@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Input from './Input';
 import Messagebox from './Messagebox';
 import logo from './whatsapp.png';
@@ -11,11 +12,13 @@ const style = {
 };
 
 const Chatbox = () => {
+	const spanRef = useRef();
+
 	return (
 		<div className={style.box} style={{ backgroundImage: `url(${logo})` }}>
 			<div className={style.header}>CHATROOM</div>
-			<Messagebox />
-			<Input />
+			<Messagebox {...{ spanRef }} />
+			<Input {...{ spanRef }} />
 		</div>
 	);
 };

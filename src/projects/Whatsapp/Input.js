@@ -9,10 +9,10 @@ const style = {
 	button: `basis-1/4 bg-whatsappbg text-white rounded-br-xl`,
 };
 
-const Input = () => {
+const Input = ({ spanRef }) => {
 	const [text, setText] = useState('');
 
-	const sendMessage = async (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		const { displayName, uid } = auth.currentUser;
@@ -27,17 +27,19 @@ const Input = () => {
 			timestamp: serverTimestamp(),
 		});
 
+		spanRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
 		setText('');
 	};
 
 	return (
-		<form onSubmit={sendMessage} className={style.inputbox}>
+		<form onSubmit={handleSubmit} className={style.inputbox}>
 			<input
-				type="text"
+				type='text'
 				value={text}
 				className={style.input}
 				onChange={(e) => setText(e.target.value)}
-				placeholder="Type a message..."
+				placeholder='Type a message...'
 				autoFocus
 			/>
 			<button className={style.button}>Send</button>
